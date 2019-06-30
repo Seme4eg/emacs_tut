@@ -1,0 +1,106 @@
+C-x == ctrl-x | M-x == alt-x
+
+C-v	Move forward one screenful
+M-v	Move backward one screenful
+C-l Clear screen and redisplay all the text, moving the text around the
+    cursor to the center of the screen. (like `zz` in vim)
+
+    C-p
+C-b     C-f
+    C-n
+    
+
+## Extending the command set
+
+C-x	Character extend.  Followed by one character.
+M-x	Named command extend.  Followed by a long name.
+
+C-x-u -- undo
+C-x C-f -- find/create a file and also switch between buffers
+
+> bottom line is called minibuffer
+
+C-x C-s -- save the file
+C-x C-b -- List buffers
+C-x b {buffer-name} - switch to buffer {buffer_name}
+C-x C-c -- Quit Emacs
+C-z -- exit Emacs *temporarily*--so that you can go
+    back to the same Emacs session afterward
+C-x s - Save some buffers
+C-x u - Undo
+C-s -- forward search
+C-r -- reverse search.
+
+C-x 1 -- One window (i.e., kill all other windows).
+C-x 2 -- split the screen into two windows
+C-M-v -- sctoll to the bottom window
+`C-x o` -- (o for 'other') to move the cursor to the bottom window
+`C-x 4 C-f {file_name}` -- See the specified file appear in the bottom
+window. The cursor goes there, too.
+
+
+
+
+* AUTO SAVE
+-----------
+
+Emacs periodically writes an "auto save" file for each file that
+you are editing. The auto save file name looks like "#{file_name}#". 
+When you save the file, Emacs deletes its auto save file.
+
+If the computer crashes, you can recover it by opening it again and then typing
+M-x recover file RET
+
+---
+
+If you are going to be editing human-language text, such as this file, you
+should probably use Text Mode.
+
+>> Type M-x text mode<Return>.
+
+M-f and M-b now treat apostrophes as part of words. In Fundamental mode, M-f
+and M-b treated apostrophes as word-separators.
+
+Major modes usually make subtle changes like that one: most commands
+do "the same job" in each major mode, but they work a little bit
+differently.
+
+To view documentation on your current major mode, type C-h m.
+
+Major modes are called major because there are also minor modes.
+Minor modes are not alternatives to the major modes, just minor
+modifications of them.  Each minor mode can be turned on or off by
+itself, independent of all other minor modes, and independent of your
+major mode.  So you can use no minor modes, or one minor mode, or any
+combination of several minor modes.
+
+When in Auto Fill mode, Emacs breaks the line in between words automatically
+whenever you insert text and make a line that is too wide.
+
+toggle: `M-x auto fill mode<Return>`
+
+Default margin is 70 chars, but you can change it: `C-x f {number}`
+
+M-q -- re-fill the paragraph under cursor
+
+---
+
+
+* RECURSIVE EDITING LEVELS
+--------------------------
+
+Sometimes you will get into what is called a "recursive editing
+level".  This is indicated by square brackets in the mode line,
+surrounding the parentheses around the major mode name.  For
+example, you might see [(Fundamental)] instead of (Fundamental).
+
+To get out of the recursive editing level, type <ESC> <ESC> <ESC>.
+That is an all-purpose "get out" command.  You can also use it for
+eliminating extra windows, and getting out of the minibuffer.
+
+>> Type M-x to get into a minibuffer; then type <ESC> <ESC> <ESC> to
+   get out.
+
+You cannot use C-g to get out of a recursive editing level.  This is
+because C-g is used for canceling commands and arguments WITHIN the
+recursive editing level.

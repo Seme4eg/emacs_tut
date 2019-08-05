@@ -18,8 +18,6 @@ M-x list-packages -- see all packages
 C-h i -- list all commands
 C-h b -- **list all keybindings**
 
-C-x 0 -- close all buffers exept main? one
-
 M-x shell -- open shell inside emacs **useful**
 
 M-x visual-line-mode -- instead of hard word wrap there will be soft wrap (words will not break up)
@@ -27,3 +25,20 @@ M-x visual-line-mode -- instead of hard word wrap there will be soft wrap (words
 M-x menu-set-font -- change font if can
 
 M-x linum-mode -- show line numbers
+
+
+---
+
+no restarting emacs when add to init file:
+
+- `M-x eval-requion` -- evals selected lines of code in emacs
+
+- `M-x eval-buffer` -- evaluete code in cur. line
+
+- `M-x load-file` (then 2 times RET) -- reload any file (most often .emacs) without restarting Emacs
+
+
+`M-x revert-buffer` - “refresh” a opened file to its saved state
+
+
+`C-h l` - shows all commands called before (including function names)

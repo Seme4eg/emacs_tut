@@ -1,8 +1,3 @@
-## BUFFERS
-
-C-x b {buf_name} -- create new buffer with {name}
-
-
 ## MACRO
 
 f3 --> do things --> f4 -- record a macro (f4 - call macro) 
@@ -17,6 +12,9 @@ M-x list-packages -- see all packages
 
 C-h i -- list all commands
 C-h b -- **list all keybindings**
+> or just go [here](https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf)
+
+`C-h k {any key binding}` -- get help on a particular key combination
 
 M-x shell -- open shell inside emacs **useful**
 
@@ -42,3 +40,11 @@ no restarting emacs when add to init file:
 
 
 `C-h l` - shows all commands called before (including function names)
+
+
+
+## Windows
+
+`M-x menu-set-font` - set font if available
+
+

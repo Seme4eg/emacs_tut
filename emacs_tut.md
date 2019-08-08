@@ -30,6 +30,12 @@ C-z -- exit Emacs *temporarily*--so that you can go
 `C-s C-s` - saerch the same word searched last time
 `C-s C-w` - search the word under the cursora (type `C-w` multiple tiles to expand word selection)
 
+### Finding in buffers
+
+`M-x occur` - find all lines in cur. file that match regexp
+`M-x multi-occur-in-matching-buffers` - find regexp in needed buffers
+
+
 
 ## Commands
 
@@ -114,3 +120,27 @@ M-x list-packages -- see all packages
 (load-theme 'misterioso t).
 
 M-x customize-themes
+
+
+
+## Terminal
+
+if you already have emacs session running, but for some reason want to
+open new file in emacs from terminal, `emacsclient {file_name}` will
+open the file in existing emacs session, but in order for that to work
+you need to go `M-x customize` --> search for 'server' --> set _Server
+Mode_ **on** and save it for future sessions. After opening this file
+in existing emacs session `C-x #` after you done with it so the
+terminal process ends
+
+**Terminal inside emacs**:
+
+`M-x term` - open terminal (with a prompt which one) in emacs
+
+> in order to be able open multiple terminal in emacs:
+> 0) install extension for terminal multiplexing 'tmux'
+> 1) install pkg 'multi-term' and use `M-x multi-term`
+
+`M-x shell` - another way of opening terminal in emacs
+
+`M-x eshell` - open shell written in emacs lisp

@@ -1,14 +1,31 @@
-## MACRO
-
 f3 --> do things --> f4 -- record a macro (f4 - call macro) 
-
-C-= - highlight syntactical section, repeat (select function with that shortcut and press `tab` to indent properly)
 
 C-x C-+/- -- increate/decrease font size
 
+
+## Customize
+
+`M-x customize` - enter customization menu
+
+`M-x customize-group` - enter customization menu for specific group
+
+> `M-x customize-group` --> then enter 'package'
+
 M-x customize-themes
 
-M-x list-packages -- see all packages
+M-x menu-set-font -- change font if can
+
+
+## Packages
+
+`M-x list-packages` - see all packages
+
+while in list of packages:
+
+`Shift-u` - mark any packages available for upgrade --> `x` to install
+- `i` -- mark package
+- `x` -- install marked package
+
 
 C-h i -- list all commands
 C-h b -- **list all keybindings**
@@ -19,8 +36,6 @@ C-h b -- **list all keybindings**
 M-x shell -- open shell inside emacs **useful**
 
 M-x visual-line-mode -- instead of hard word wrap there will be soft wrap (words will not break up)
-
-M-x menu-set-font -- change font if can
 
 M-x linum-mode -- show line numbers
 

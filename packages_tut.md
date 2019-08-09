@@ -1,6 +1,7 @@
 ## Magit
 
 > ref: https://www.youtube.com/watch?v=zobx3T7hGNA
+> ref: https://www.youtube.com/watch?v=vQO7F2Q9DwA
 
 `<leader>gi` (`M-x magit-init`) -- init rep
 `<leader>gs` (`M-x magit-status`) -- run magit main interface
@@ -10,19 +11,30 @@ _While in magit interface_:
 - `n` -- next line
 - `p` -- prev line
 - `s` -- stage file (or if hover category - stage all files in this category
+- `k` -- discard changes
+- `i` -- add this file to .gitignore
+- `tab` -- view changes in file --> <RET> on needed line --> edit --> go to prev buffer --> `g` to **refresh**
+- `g` -- refresh the state of changed files
 - `c c` -- commit (after wrote commit `C-c C-c`)
 - `l l` -- short log (shows latest commits)
 - `h` -- **help** (shows all keys)
+- `$` -- pop up status messages
+- `b c` -- create new branch
+
 
 _Working with Remote Repository_:
-
-While in magit interface:
 
 - `M a` -- add remote rep
 - `P p` -- push
 - `m m` -- merge
+- `F F` -- fetch
+- `e` -- resolve conflicts --> `n` --> choose A/B --> save
 
-### Commits (changing / squashing / splitting)
+### Commits (canceling / changing / squashing / splitting)
+
+**Canceling commit message**:
+
+`X` --> choose type of reset u want (i needed soft, so i chose `s`) --> **do not choose any of shown**, just type HEAD~1 in minibuffer at bottom of the screen!
 
 **Changing commit message**:
 
@@ -35,6 +47,10 @@ make 1 commit from _N_ last ones:
 `l l` --> go to the oldest of _N_ --> `r i` ('i' for interactively)
 	  --> read the cheat sheet there and do what you need --> `C-c C-c`
 
+> or if you need to squash all unpushed commits instead of `r i` do `r l`
+> and keep in mind that there all changes are reversed (old commits are at the top)
+> prob. what you need is `s` (squash)
+
 **Splitting commit**:
 
 `l l` --> hover needed one --> `r m` --> @ sign shows cur. HEAD
@@ -44,8 +60,6 @@ make 1 commit from _N_ last ones:
 
 ---
 
-`b c` --> create new branch
-
 **Rebasing**:
 
 checkout to needed branch --> `r e` and choose master ('e' for
@@ -53,6 +67,9 @@ checkout to needed branch --> `r e` and choose master ('e' for
 	needed diff --> `b` to choose variant B (for instance) --> `q` (quit
 	Ediff) --> on main magit screen press `g` to **refresh** it --> `r r`
 	(continue rebase)
+
+> nice reference is shown in [this](https://www.youtube.com/watch?v=vQO7F2Q9DwA)
+> video, **after** 10:38
 
 **Bisecting** - find the last commit that fucked up everything
 

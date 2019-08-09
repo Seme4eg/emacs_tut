@@ -1,34 +1,49 @@
-## Extending the command set
+## Basics
 
 `C-x` - character extend
 `M-x` - named command extend
 
 **[basic keys](http://ergoemacs.org/emacs/emacs_keys_basics.html)**
 
-C-x-u / C-_ -- undo
-
-
-## Buffers
-
-C-x C-f -- find/create a file and also switch between buffers
-C-x C-b -- List buffers
-C-x k to kill (close) a buffer. Automatically opened windows are usually closeable with “q”.
-C-x b {buffer-name} - switch to buffer {buffer_name}
-C-x s - Save some buffers
-
-C-z -- exit Emacs *temporarily*--so that you can go
-    back to the same Emacs session afterward
-
-> `C-x 4 C-f {file_name}` -- See the specified file appear in the
-> bottom window. The cursor goes there, too.
-
-- C-g - cancel prompts. Later we’ll remap the escape key to do the same which anyone coming from Vim will need to retain its sanity.
-- C-y: yank/paste. The only way to paste on the modeline even when you’re using Evil.
-
+`C-x-u` / C-_ -- undo
+`C-g` - cancel prompts. Later we’ll remap the escape key to do the same which anyone coming from Vim will need to retain its sanity.
+`C-y` - yank/paste. The only way to paste on the modeline even when you’re using Evil.
 `M-%` - replace string (y - replace, n - skip, ! - do all replacements)
 `M-;` - comment / uncomment region
 `C-s C-s` - saerch the same word searched last time
 `C-s C-w` - search the word under the cursora (type `C-w` multiple tiles to expand word selection)
+`C-z` - exit Emacs *temporarily*--so that you can go back to the same Emacs session afterward
+
+> Automatically opened windows are usually closeable with “q”.
+
+
+## Buffers
+
+C-x C-f - find/create a file and also switch between buffers
+C-x C-b - List buffers
+C-x k - kill (close) a buffer.
+C-x b {buffer-name} - switch to buffer {buffer_name}
+C-x s - Save some buffers
+
+**Managing buffers in Buffer Menu**:
+
+_call buffer-menu via `C-x C-b` or `<leader>bl`_
+
+RET  Select current line’s buffer in place of the buffer menu.
+o    Select that buffer in another window
+m    Mark current line’s buffer to be displayed.
+v    Select current line’s buffer / show buffers marked with m, in other windows.
+M-s a C-o    Show lines matching regexp in the marked buffers.
+s    Mark that buffer to be saved, and move down.
+d    Mark that buffer to be deleted
+x    Delete or save marked buffers.
+u    Remove all marks from current line. With prefix argument, also move up one line.
+U    Remove all marks from all lines.
+g    Update the list of buffers.
+T    Toggle whether the menu displays only file buffers.
+
+> to see more commands type `?` while in buffer menu
+
 
 ### Finding in buffers
 

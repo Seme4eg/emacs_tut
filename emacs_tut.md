@@ -16,6 +16,14 @@
 
 > Automatically opened windows are usually closeable with “q”.
 
+**getting help / documentation:**
+
+C-h i -- list all commands
+C-h b -- **list all keybindings**
+> or just go [here](https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf)
+
+`C-h k {any key binding}` -- get help on a particular key combination
+
 
 ## Buffers
 
@@ -44,7 +52,6 @@ T    Toggle whether the menu displays only file buffers.
 
 > to see more commands type `?` while in buffer menu
 
-
 ### Finding in buffers
 
 `M-x occur` - find all lines in cur. file that match regexp
@@ -52,24 +59,17 @@ T    Toggle whether the menu displays only file buffers.
 
 
 
-## Commands
+## Some useful commands (M-x)
 
-- `M-x visual-line-mode` - toggle long lines wrapping (like set wrap/nowrap in Vim)
+`M-x revert-buffer` - “refresh” a opened file to its saved state
 
-- `M-x delete-trailing-whitespace` - delete trailing white spaces in the whole buffer
+`M-x visual-line-mode` - toggle long lines wrapping (like set wrap/nowrap in Vim)
+`M-x delete-trailing-whitespace` - delete trailing white spaces in the whole buffer
+`M-x recover file` - recover current file from 'autosave file'
+`M-x visual-line-mode` - instead of hard word wrap there will be soft wrap (words will not break up)
+`M-x linum-mode` - show line numbers
+`M-x menu-set-font` - set font if available
 
-
-
-
-
-## Auto save
-
-Emacs periodically writes an "auto save" file for each file that
-you are editing. The auto save file name looks like "#{file_name}#". 
-When you save the file, Emacs deletes its auto save file.
-
-If the computer crashes, you can recover it by opening it again and then typing
-M-x recover file RET
 
 
 ## Editing modes
@@ -103,33 +103,39 @@ bindings radically.
 **Auto Fill** mode, Emacs breaks the line in between words automatically
 whenever you insert text and make a line that is too wide. (`M-x auto fill mode <RET>`)
 
+**Web Mode** - one of several mods, that support multiple modes at
+the same time, **it supports templates**
+
 Default margin is 70 chars, but you can change it: `C-x f {number}`
 
 M-q -- re-fill the paragraph under cursor
 
 
-## Recursive editing levels
-
-To get out of the recursive editing level, type <ESC> <ESC> <ESC>.
-That is an all-purpose "get out" command.  You can also use it for
-eliminating extra windows, and getting out of the minibuffer.
-
-> Type M-x to get into a minibuffer; then type <ESC> <ESC> <ESC> to get out.
-
 
 ## Packages
 
-`M-x package-list-packages RET` -- open up the package manager
-buffer. Inside this buffer instead of `C-p` and `C-n` you can use `n`
-and `p` instead and `i`nstall, `d`elete and `h`elp. Emacs is modal.
+`M-x list-packages` - open up the package manager buffer. While in it:
+- `n`ext, `p`rev
+- `i`nstall, `d`elete and `h`elp
+- `Shift-u` - mark any packages available for upgrade --> `x` to install
+- `i` -- mark package
+- `x` -- install marked package
 
-the customize buffer, via `M-x customize-group RET` also sets up its
-own modal bindings; `TAB` for example will jump to the next option.
+> if some of keys above will not work try `M-x package-list-package`
 
 M-x list-packages -- see all packages
 
 
-## Themes
+## Customization & Themes
+
+`M-x customize` - enter customization menu
+
+`M-x customize-group` - enter customization menu for specific group
+- `TAB` -- jump to the next option.
+
+> `M-x customize-group` --> then enter 'package'
+
+M-x menu-set-font -- change font if can
 
 `M-x load-theme RET` - check the available themes. Then put in .emacs:
 (load-theme 'misterioso t).
@@ -159,3 +165,18 @@ terminal process ends
 `M-x shell` - another way of opening terminal in emacs
 
 `M-x eshell` - open shell written in emacs lisp
+
+
+
+## Additional info
+
+f3 --> do things --> f4 -- record a macro (f4 - call macro) 
+
+C-x C-+/- -- increate/decrease font size
+
+`C-h l` - shows all commands called before (including function names)
+
+no restarting emacs when add to init file:
+- `M-x eval-requion` -- evals selected lines of code in emacs
+- `M-x eval-buffer` -- evaluete code in cur. line
+- `M-x load-file` (then 2 times RET) -- reload any file (most often .emacs) without restarting Emacs

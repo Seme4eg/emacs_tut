@@ -60,7 +60,7 @@ make 1 commit from _N_ last ones:
 
 ---
 
-**Rebasing**:
+### Rebasing
 
 checkout to needed branch --> `r e` and choose master ('e' for
 	elsewhere) -- put cursor on the conflict file and press `e` --> select
@@ -74,6 +74,15 @@ checkout to needed branch --> `r e` and choose master ('e' for
 **Bisecting** - find the last commit that fucked up everything
 
 > https://www.lvguowei.me/post/magit-tutorial-bisect/
+
+
+
+
+### Patch another branch's some files
+
+`D`iff two branches --> move focus by `N`, `P` --> focud needed diff-item --> `a`pply
+
+> same way works for new file created on dif. branch
 
 
 
@@ -91,9 +100,19 @@ That's pretty much the only thing u need to know about _Helm_
 
 
 
-## Projectile
+## Projectile & helm-projectile
 
 https://github.com/bbatsov/projectile
+
+> helm-projectile -- helm integration for Projectile
+
+`<leader>pf` - projectile-find-file -- open file in project (porject is considered to be a git rep
+
+to make projectile ignore some files create `.projectile` file and put there regexp like in `.gitignore`:
+	-*.md
+	-.*
+
+> where `-` means **ignore** (`-*.md` means ignore all .md files)
 
 Learn how to do following things:
 

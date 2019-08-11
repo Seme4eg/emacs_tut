@@ -114,14 +114,14 @@ M-q -- re-fill the paragraph under cursor
 
 ## Packages
 
-`M-x list-packages` - open up the package manager buffer. While in it:
+`M-x package-list-packages` - open up the package manager buffer. While in it:
 - `n`ext, `p`rev
-- `i`nstall, `d`elete and `h`elp
+- `d`elete and `h`elp
 - `Shift-u` - mark any packages available for upgrade --> `x` to install
-- `i` -- mark package
+- `i` -- mark package for installation
 - `x` -- install marked package
 
-> if some of keys above will not work try `M-x package-list-package`
+`M-x package-autoremove` - remove no longer needed packages
 
 M-x list-packages -- see all packages
 

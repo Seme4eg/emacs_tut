@@ -1,5 +1,9 @@
 ## Basics
 
+First: [make CapsLock be ctrl](https://www.emacswiki.org/emacs/MovingTheCtrlKey)
+
+> i just did `setxkbmap -option ctrl:nocaps` (in terminal) # Make Caps Lock a Control key
+
 `C-x` - character extend
 `M-x` - named command extend
 
@@ -25,7 +29,10 @@ C-h b -- **list all keybindings**
 `C-h k {any key binding}` -- get help on a particular key combination
 
 
-## Buffers
+
+## Navigation (buffers/windows(tabs))
+
+### Buffers
 
 C-x C-f - find/create a file and also switch between buffers
 C-x C-b - List buffers
@@ -52,10 +59,27 @@ T    Toggle whether the menu displays only file buffers.
 
 > to see more commands type `?` while in buffer menu
 
-### Finding in buffers
+**finding in buffers**:
 
 `M-x occur` - find all lines in cur. file that match regexp
 `M-x multi-occur-in-matching-buffers` - find regexp in needed buffers
+
+
+### Tabs / Windows
+
+There are no tabs in emacs initially, but there are windows configurations
+
+> it is possible to configure tabs in emacs, but they won't be as flexible as in vim, or that'll take lots of effort to achieve, which is not worth it, here is some info tho:
+> [tabbar package customisation](https://emacs.stackexchange.com/questions/10081/browser-style-tabs-for-emacs)
+> [tabbar emacswiki page](https://www.emacswiki.org/emacs/TabBarMode)
+
+**window configuration**:
+
+`C-x r w {register}` - save cur window and buffer position into register
+`C-x r j {register}` - reapply saved window config
+
+(evil-leader/set-key "cs" 'window-configuration-to-register)
+(evil-leader/set-key "cr" 'jump-to-register)
 
 
 
@@ -69,6 +93,7 @@ T    Toggle whether the menu displays only file buffers.
 `M-x visual-line-mode` - instead of hard word wrap there will be soft wrap (words will not break up)
 `M-x linum-mode` - show line numbers
 `M-x menu-set-font` - set font if available
+`M-x goto-char` - go to buffer position in file (**useful** when debugging emacs init files)
 
 
 
@@ -115,11 +140,8 @@ M-q -- re-fill the paragraph under cursor
 ## Packages
 
 `M-x package-list-packages` - open up the package manager buffer. While in it:
-- `n`ext, `p`rev
-- `d`elete and `h`elp
+- `h`elp -- see all possible commands (not many)
 - `Shift-u` - mark any packages available for upgrade --> `x` to install
-- `i` -- mark package for installation
-- `x` -- install marked package
 
 `M-x package-autoremove` - remove no longer needed packages
 
@@ -156,7 +178,12 @@ terminal process ends
 
 **Terminal inside emacs**:
 
-`M-x term` - open terminal (with a prompt which one) in emacs
+`M-x term` - open terminal, but **don't** use this one
+
+`M-x ansi-term` - faster, better, supports starting cursor applications etc..
+
+> in 'char' mode ansi-term behaves like a terminal, in line mode it behaves like a buffer
+> which means you can copy, edit stuff etc..
 
 > in order to be able open multiple terminal in emacs:
 > 0) install extension for terminal multiplexing 'tmux'
@@ -180,3 +207,9 @@ no restarting emacs when add to init file:
 - `M-x eval-requion` -- evals selected lines of code in emacs
 - `M-x eval-buffer` -- evaluete code in cur. line
 - `M-x load-file` (then 2 times RET) -- reload any file (most often .emacs) without restarting Emacs
+
+`list-command-history` - show all commands history
+
+`C-x C-e` - eval expression (**after changing `init.el` file**) 
+
+>to eval expression go to the end of the line

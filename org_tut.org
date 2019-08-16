@@ -1,0 +1,122 @@
+* Heading
+** Subheading
+
+> [source](http://pragmaticemacs.com/org-mode-tutorials/)
+
+press `tab` on heading - **collapse heading**
+
+`shift + tab` - collapse / uncollapse everything
+
+* Text formatting
+
+*bold* /italic/ +strikethrough+ =snippet/package-name= _underlined_ ~code~
+
+> ~code~ generally appears the same as literal text
+
+** Formatted blocks of text
+*Text in these blocks can be edited via ~C-c '~
+#+BEGIN_EXAMPLE
+  <e tab
+
+  This is an example block into which you can type text that you don't
+  want org to mess with like a [[link]]
+#+END_EXAMPLE
+
+#+BEGIN_QUOTE
+~<q tab~ -- This block encloses text that you want to appear as a quotation
+#+END_QUOTE
+
+#+BEGIN_CENTER
+~<c tab~ -- This text will be centred when it is exported
+#+END_CENTER
+
+** Source code blocks
+#+BEGIN_SRC js
+  // `<s` --> `tab`
+#+END_SRC
+
+** Executing source code blocks
+Org-mode can execute your source code blocks and add the output to
+your file. This part of org-mode is called babel
+
+#+BEGIN_SRC sh
+  echo "Hello $USER! Today is `date`"
+  exit
+#+END_SRC
+
+> text below is executed via ~C-c C-c~, while cursor on block above
+
+#+RESULTS:
+: Hello sad! Today is Пт авг 16 15:00:47 MSK 2019
+
+* Lists
+
+*** bullet list
+    - bullet lists can be created like this (start a line with one or more space and a -
+    - pressing M-RET gives you a new bullet
+    - nested bullets:
+      - like this one (I pressed M-RET TAB to indent it)
+    - shift + tab to unindent it
+    - reorder list items with M-up or M-down just like with section headings
+    - you can change bullet style using S-left and S-right
+
+*** checklists [0/4]
+    - [ ] we can even have check lists
+    - [ ] M-S-RET gives a new item with a check box
+    - [ ] C-c C-c check/uncheck a box
+      - [ ] sub item
+    - [ ] track the number of items by adding '/' to the end of a line above a checklist - this updates when you check items off
+
+*** definition lists
+    - definition lists :: these are useful sometime
+    - item 2 :: M-RET again gives another item
+
+* Tables
+
+1) when you get to the "s" of comments, press TAB to go to the next line
+2) go up to the previous line and use C-c - to add the row of dashes
+3) next enter a few lines of data, using TAB to go through the cells
+4) move rows and columns around using M-arrow and insert or delete rows and columns using M-S-arrow
+
+| ID | x | y | comments     |
+|----+---+---+--------------|
+| a  | 1 | 2 | some         |
+| b  | 3 | 4 | some comment |
+
+`C-c |` - create an empty table / convert selected text to a table
+
+ ID  x   y
+ A   2   4
+ B   3   9
+
+`M-x org-table-export` -- save tables to their own files (while cursor in the table)
+
+> For the format, type orgtbl-to and press TAB to see the available
+  options (e.g. orgtbl-to-csv will convert to csv in the output file)
+
+** Formulae
+use formulae to do arithmetic on tables, and use them like a spreadsheet.
+
+more [[http://orgmode.org/worg/org-tutorials/org-spreadsheet-intro.html][info]]
+
+* Links and images
+
+[[http://pragmaticemacs.com/emacs/org-mode-basics-iii-add-links-and-images-to-you-notes/][how to paste local img/gifs into document]]
+
+structure of link in org mode:
+
+#+BEGIN_EXAMPLE
+  [[link_address][description]]
+#+END_EXAMPLE
+
+`C-c C-o` - open link below cursor
+
+[[Links and images][in file link]] - address part matches a headline in this doc.
+* Exporting .org file
+~C-c C-e~ -- export file, then choose needed options
+
+Examples:
+~C-c C-e h o~ -- export to HTML and open it
+~C-c C-e l o~ -- export to latex adn compile it to produce a pdf and open it
+
+Also check how to tweak the look of exported file [[http://pragmaticemacs.com/emacs/org-mode-basics-v-exporting-your-notes/][here]]

@@ -12,7 +12,7 @@ _While in magit interface_:
 - `p` -- prev line
 - `s` -- stage file (or if hover category - stage all files in this category
 - `k` -- discard changes
-- `i` -- add this file to .gitignore
+- `i` -- ignore file (don't know what it means actually)
 - `tab` -- view changes in file --> <RET> on needed line --> edit --> go to prev buffer --> `g` to **refresh**
 - `g` -- refresh the state of changed files
 - `c c` -- commit (after wrote commit `C-c C-c`)
@@ -74,8 +74,6 @@ checkout to needed branch --> `r e` and choose master ('e' for
 **Bisecting** - find the last commit that fucked up everything
 
 > https://www.lvguowei.me/post/magit-tutorial-bisect/
-
-
 
 
 ### Patch another branch's some files
@@ -147,6 +145,7 @@ comes preinstalled with emacs
 `s` - change sorting order of the dir.
 `A` - search for regexp in files in cur dir --> then press `M-,` to go to next match
 `C-x C-q` - make dired buffer editable --> after changes are done `C-c C-c`
+`(` - toggle details
 
 to operate on multiple files - **mark** them:
 `m` - mark file / dir
@@ -154,7 +153,9 @@ to operate on multiple files - **mark** them:
 `U` - unmark all files
 `t` - toggle marks in cur dir
 
+After setting `(setq dired-dwim-target t)` in settings `o` press on a dir opens this dir in sep. window. Now mark some files and try to rename/copy them - emacs will offer you to move them to an opened dir, just hit `Enter` to submit
+
 **to work only on files in cur. dir.**:
-`* /` - mark all directoryes --> `t` - toggle marks (will mark all files and unmark all dirs)
+`* /` - mark all directories --> `t` - toggle marks (will mark all files and unmark all dirs)
 
 > `C-h i` --> 'Emacs' --> 'Dired' -- **documentation** for Dired

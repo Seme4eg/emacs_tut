@@ -1,3 +1,6 @@
 \#*#
 *~
 .#*
+
+# ignore compiled .org files
+*.html

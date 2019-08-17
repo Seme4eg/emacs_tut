@@ -9,7 +9,7 @@ press `tab` on heading - **collapse heading**
 
 * Text formatting
 
-*bold* /italic/ +strikethrough+ =snippet/package-name= _underlined_ ~code~
+*bold* /italic/ +strikethrough+ =literal text= _underlined_ ~code~
 
 > ~code~ generally appears the same as literal text
 
@@ -50,7 +50,6 @@ your file. This part of org-mode is called babel
 : Hello sad! Today is Пт авг 16 15:00:47 MSK 2019
 
 * Lists
-
 *** bullet list
     - bullet lists can be created like this (start a line with one or more space and a -
     - pressing M-RET gives you a new bullet
@@ -120,3 +119,29 @@ Examples:
 ~C-c C-e l o~ -- export to latex adn compile it to produce a pdf and open it
 
 Also check how to tweak the look of exported file [[http://pragmaticemacs.com/emacs/org-mode-basics-v-exporting-your-notes/][here]]
+
+* Additional info
+** Adding TODO's
+Added some settings for org TODO in my config
+
+- ~, oc~ :: add todo item (do it from anywhere)
+- ~C-c C-s~ :: add scheduled date to an item (while adding todo)
+- ~C-c C-d~ :: add deadline (while adding todo)
+
+=Items above will pop up a calendar, navigate there
+
+near heading which'll pop up name the todo item and below any description (optional)
+
+~C-c C-c~ - save todo item
+
+default priority is A, ~Shift + arrows~ - change it
+
+** Viewing agenda
+~, oa~ - launch /agenda dispatcher/
+
+- $ :: cross an item off your list. which marks it as done
+  and archives the item in a file called todo.org_archive
+- ~Shift + up/down~ :: change priority or an item
+- ~E~ :: view notes to go with item
+- ~RET~ :: edit or view an item
+- ~q~ :: quit todo buffer (after opening with ~, oa~)

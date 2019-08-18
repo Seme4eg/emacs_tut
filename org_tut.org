@@ -2,7 +2,6 @@
 ** Subheading
 
 > [source](http://pragmaticemacs.com/org-mode-tutorials/)
-
 press `tab` on heading - **collapse heading**
 
 `shift + tab` - collapse / uncollapse everything
@@ -128,7 +127,7 @@ Added some settings for org TODO in my config
 - ~C-c C-s~ :: add scheduled date to an item (while adding todo)
 - ~C-c C-d~ :: add deadline (while adding todo)
 
-=Items above will pop up a calendar, navigate there
+=Items above will pop up a calendar, navigate there=
 
 near heading which'll pop up name the todo item and below any description (optional)
 
@@ -137,7 +136,8 @@ near heading which'll pop up name the todo item and below any description (optio
 default priority is A, ~Shift + arrows~ - change it
 
 ** Viewing agenda
-~, oa~ - launch /agenda dispatcher/
+~, oa t~ - view todo tasks
+~, oa n~ - display list of scheduled tasks and unscheduled tasks below it
 
 - $ :: cross an item off your list. which marks it as done
   and archives the item in a file called todo.org_archive
@@ -145,3 +145,7 @@ default priority is A, ~Shift + arrows~ - change it
 - ~E~ :: view notes to go with item
 - ~RET~ :: edit or view an item
 - ~q~ :: quit todo buffer (after opening with ~, oa~)
+
+Edited ~org-capture-templates~ so all new tasks will be today's date by default.
+
+~Shift + arrows~ - edit date

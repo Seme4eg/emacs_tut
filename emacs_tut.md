@@ -24,6 +24,7 @@ First: [make CapsLock be ctrl](https://www.emacswiki.org/emacs/MovingTheCtrlKey)
 
 C-h i -- list all commands
 C-h b -- **list all keybindings**
+`C-h a` --> command / part of command -- get a help on a command
 > or just go [here](https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf)
 
 `C-h k {any key binding}` -- get help on a particular key combination
@@ -197,7 +198,7 @@ terminal process ends
 
 ## Additional info
 
-f3 --> do things --> f4 -- record a macro (f4 - call macro) 
+f3 --> do things --> f4 -- record a macro (f4 - call macro)
 
 C-x C-+/- -- increate/decrease font size
 
@@ -210,6 +211,8 @@ no restarting emacs when add to init file:
 
 `list-command-history` - show all commands history
 
-`C-x C-e` - eval expression (**after changing `init.el` file**) 
+`C-x C-e` - eval expression (**after changing `init.el` file**)
 
 >to eval expression go to the end of the line
+
+`C-c C-o` - open link below cursor (in default browser)

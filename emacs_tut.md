@@ -1,5 +1,4 @@
-## Basics
-
+# Basics
 First: [make CapsLock be ctrl](https://www.emacswiki.org/emacs/MovingTheCtrlKey)
 
 > i just did `setxkbmap -option ctrl:nocaps` (in terminal) # Make Caps Lock a Control key
@@ -31,43 +30,25 @@ C-h b -- **list all keybindings**
 
 
 
-## Navigation (buffers/windows(tabs))
+# Navigation (buffers/windows(tabs))
+## Buffers
+`C-x C-f` - find/create a file and also switch between buffers
+`C-x C-b` - List buffers
+`C-x b` - go to buffer
+`C-x k` - kill (close) a buffer.
+`C-x b {buffer-name}` - switch to buffer {buffer_name}
+`C-x s` - Save some buffers
 
-### Buffers
+### Ibuffer
+`<leader> ib` - current shortcut for _ibuffer_
 
-C-x C-f - find/create a file and also switch between buffers
-C-x C-b - List buffers
-C-x k - kill (close) a buffer.
-C-x b {buffer-name} - switch to buffer {buffer_name}
-C-x s - Save some buffers
+`?` - **everything** u need to know
 
-**Managing buffers in Buffer Menu**:
-
-_call buffer-menu via `C-x C-b` or `<leader>bl`_
-
-RET  Select current line’s buffer in place of the buffer menu.
-o    Select that buffer in another window
-m    Mark current line’s buffer to be displayed.
-v    Select current line’s buffer / show buffers marked with m, in other windows.
-M-s a C-o    Show lines matching regexp in the marked buffers.
-s    Mark that buffer to be saved, and move down.
-d    Mark that buffer to be deleted
-x    Delete or save marked buffers.
-u    Remove all marks from current line. With prefix argument, also move up one line.
-U    Remove all marks from all lines.
-g    Update the list of buffers.
-T    Toggle whether the menu displays only file buffers.
-
-> to see more commands type `?` while in buffer menu
-
-**finding in buffers**:
-
+### Finding in buffers
 `M-x occur` - find all lines in cur. file that match regexp
 `M-x multi-occur-in-matching-buffers` - find regexp in needed buffers
 
-
-### Tabs / Windows
-
+## Tabs / Windows
 There are no tabs in emacs initially, but there are windows configurations
 
 > it is possible to configure tabs in emacs, but they won't be as flexible as in vim, or that'll take lots of effort to achieve, which is not worth it, here is some info tho:
@@ -82,24 +63,7 @@ There are no tabs in emacs initially, but there are windows configurations
 (evil-leader/set-key "cs" 'window-configuration-to-register)
 (evil-leader/set-key "cr" 'jump-to-register)
 
-
-
-## Some useful commands (M-x)
-
-`M-x revert-buffer` - “refresh” a opened file to its saved state
-
-`M-x visual-line-mode` - toggle long lines wrapping (like set wrap/nowrap in Vim)
-`M-x delete-trailing-whitespace` - delete trailing white spaces in the whole buffer
-`M-x recover file` - recover current file from 'autosave file'
-`M-x visual-line-mode` - instead of hard word wrap there will be soft wrap (words will not break up)
-`M-x linum-mode` - show line numbers
-`M-x menu-set-font` - set font if available
-`M-x goto-char` - go to buffer position in file (**useful** when debugging emacs init files)
-
-
-
-## Editing modes
-
+# Editing modes
 **To view documentation on your current major mode, type C-h m.**
 
 `M-x text mode <RET>` - M-f and M-b now treat apostrophes as part of
@@ -136,10 +100,7 @@ Default margin is 70 chars, but you can change it: `C-x f {number}`
 
 M-q -- re-fill the paragraph under cursor
 
-
-
-## Packages
-
+# Packages
 `M-x package-list-packages` - open up the package manager buffer. While in it:
 - `h`elp -- see all possible commands (not many)
 - `Shift-u` - mark any packages available for upgrade --> `x` to install
@@ -148,9 +109,7 @@ M-q -- re-fill the paragraph under cursor
 
 M-x list-packages -- see all packages
 
-
-## Customization & Themes
-
+# Customization & Themes
 `M-x customize` - enter customization menu
 
 `M-x customize-group` - enter customization menu for specific group
@@ -165,10 +124,7 @@ M-x menu-set-font -- change font if can
 
 M-x customize-themes
 
-
-
-## Terminal
-
+# Terminal
 if you already have emacs session running, but for some reason want to
 open new file in emacs from terminal, `emacsclient {file_name}` will
 open the file in existing emacs session, but in order for that to work
@@ -194,25 +150,29 @@ terminal process ends
 
 `M-x eshell` - open shell written in emacs lisp
 
-
-
-## Additional info
-
-f3 --> do things --> f4 -- record a macro (f4 - call macro)
-
-C-x C-+/- -- increate/decrease font size
-
+# Additional info
+`f3 (do things) f4` - record a macro (`f4` - call macro)
 `C-h l` - shows all commands called before (including function names)
 
-no restarting emacs when add to init file:
-- `M-x eval-requion` -- evals selected lines of code in emacs
-- `M-x eval-buffer` -- evaluete code in cur. line
-- `M-x load-file` (then 2 times RET) -- reload any file (most often .emacs) without restarting Emacs
+`C-c C-o` - open link below cursor (in default browser)
+
+`TAB / Shift + TAB` in any `.md` file folds and unfolds headers
+
+## Some useful commands (M-x)
+`revert-buffer` - “refresh” a opened file to its saved state
+
+`visual-line-mode` - toggle long lines wrapping (like set wrap/nowrap in Vim)
+`delete-trailing-whitespace` - delete trailing white spaces in the whole buffer
+`recover file` - recover current file from 'autosave file'
+`visual-line-mode` - instead of hard word wrap there will be soft wrap (words will not break up)
+`linum-mode` - show line numbers
+`menu-set-font` - set font if available
+`goto-char` - go to buffer position in file (**useful** when debugging emacs init files)
+
+After changing **any** config file:
+- `C-x C-e` - eval expression (place cursor at the end of this expression)
+- `eval-reguion` -- evals selected lines of code in emacs
+- `eval-buffer` -- evaluete code in cur. line
+- `load-file` (then 2 times RET) -- reload any file (most often .emacs) without restarting Emacs
 
 `list-command-history` - show all commands history
-
-`C-x C-e` - eval expression (**after changing `init.el` file**)
-
->to eval expression go to the end of the line
-
-`C-c C-o` - open link below cursor (in default browser)

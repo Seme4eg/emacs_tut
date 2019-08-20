@@ -1,3 +1,38 @@
+* Preinstalled packages
+** Dired
+~C-x C-f~ (def shortcut) <RET> -- open dired buffer of cur dir
+
+*** Shortcuts
+    ~d~ - mark file for deletion
+    ~~~ - mark all backup files for deletion
+    ~x~ - execute the action (delete all marked files for instance)
+    ~+~ - create new file/dir **or** ~C-x C-f~ in the dir and enter name of new file
+    ~g~ - refresh contents of buffer
+    ~!~ - (while pointing at any file) run shell command on this file (! index.html firefox)
+    ~C~ - copy file and type new name for it
+    ~R~ - rename file
+    ~s~ - change sorting order of the dir.
+    ~A~ - search for regexp in files in cur dir --> then press ~M-,~ to go to next match
+    ~C-x C-q~ - make dired buffer editable --> after changes are done ~C-c C-c~
+    ~(~ - toggle details
+    ~ ~C-h i~ --> 'Emacs' --> 'Dired' -- **documentation** for Dired
+
+*** Operating on multiple files
+    ~m~ - mark file / dir
+    ~u~ - unmark file
+    ~U~ - unmark all files
+    ~t~ - toggle marks in cur dir
+
+Set ~(setq dired-dwim-target t)~. Now ~o~ on a dir opens this dir in
+sep. window. Now mark some files and try to rename/copy them - emacs
+will offer you to move them to an opened dir, just hit ~Enter~ to
+submit
+
+*** to work only on files in cur. dir.
+    ~* /~ - mark all directories --> ~t~ - toggle marks (will mark all files and unmark all dirs)
+
+** IDO
+// fill this section
 * Magit
 [[https://www.youtube.com/watch?v=zobx3T7hGNA][ref 0]] [[https://www.youtube.com/watch?v=vQO7F2Q9DwA][ref 1]]
 
@@ -91,15 +126,16 @@ That's pretty much the only thing u need to know about _Helm_
 * Projectile & helm-projectile | [[https://github.com/bbatsov/projectile][github]]
 - helm-projectile :: helm integration for Projectile
 
-~<leader>pf~ (~projectile-find-file~) -- open file in project (porject is considered to be a git rep)
+~<leader>pf~ (~projectile-find-file~) -- open file in project (project is considered to be a git rep)
 
-to make projectile ignore some files create ~.projectile~ file and put there regexp like in ~.gitignore~:
-    -*.md
-    -.*
+** Ignoring files
+Create .projectile file and put there rules like in gitignore, but with prefix '-':
+#+BEGIN_EXAMPLE
+-*.md // ignore all .md files
+#+END_EXAMPLE
 
-> where ~-~ means **ignore** (~-*.md~ means ignore all .md files)
-
-Learn how to do following things:
+** Learn how to:
+*make paragraph below a list using evil-mc!*
 
 jump to a file in project
 jump to a project buffer
@@ -110,42 +146,6 @@ grep in project
 regenerate project etags
 visit project in dired
 run make in a project with a single key chord
-
-
-
-## Dired
-
-comes preinstalled with emacs
-
-~C-x C-f~ (def shortcut) <RET> -- open dired buffer of cur dir
-
-**Shortcuts in this dir**:
-
-~d~ - mark file for deletion
-~~~ - mark all backup files for deletion
-~x~ - execute the action (delete all marked files for instance)
-~+~ - create new file/dir **or** ~C-x C-f~ in the dir and enter name of new file
-~g~ - refresh contents of buffer
-~!~ - (while pointing at any file) run shell command on this file (! index.html firefox)
-~C~ - copy file and type new name for it
-~R~ - rename file
-~s~ - change sorting order of the dir.
-~A~ - search for regexp in files in cur dir --> then press ~M-,~ to go to next match
-~C-x C-q~ - make dired buffer editable --> after changes are done ~C-c C-c~
-~(~ - toggle details
-
-to operate on multiple files - **mark** them:
-~m~ - mark file / dir
-~u~ - unmark file
-~U~ - unmark all files
-~t~ - toggle marks in cur dir
-
-After setting ~(setq dired-dwim-target t)~ in settings ~o~ press on a dir opens this dir in sep. window. Now mark some files and try to rename/copy them - emacs will offer you to move them to an opened dir, just hit ~Enter~ to submit
-
-**to work only on files in cur. dir.**:
-~* /~ - mark all directories --> ~t~ - toggle marks (will mark all files and unmark all dirs)
-
-~ ~C-h i~ --> 'Emacs' --> 'Dired' -- **documentation** for Dired
 
 * Use-package | [[https://github.com/jwiegley/use-package][github]]
 desided to use /use-package/ due to increase in load times (lazy loading) and more structurized package management

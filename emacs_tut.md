@@ -21,13 +21,15 @@ First: [make CapsLock be ctrl](https://www.emacswiki.org/emacs/MovingTheCtrlKey)
 
 **getting help / documentation:**
 
+`C-h f` - describe-function
+`C-h k` - describe-key
+`C-h m` - describe-mode
+`C-h a` --> command / part of command -- get a help on a command
+
 C-h i -- list all commands
 C-h b -- **list all keybindings**
-`C-h a` --> command / part of command -- get a help on a command
+
 > or just go [here](https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf)
-
-`C-h k {any key binding}` -- get help on a particular key combination
-
 
 
 # Navigation (buffers/windows(tabs))

@@ -151,3 +151,71 @@ run make in a project with a single key chord
 desided to use /use-package/ due to increase in load times (lazy loading) and more structurized package management
 
 Documentation is quite big, so better go read documentation on github
+* Markdown-mode | [[https://github.com/jrblevin/markdown-mode][github]]
+#+BEGIN_SRC markdown
+  `C-c C-s` - commands for styling text (`C-h` - more)
+  `C-c C-x` - commands for toggling
+
+  `C-c C-l` - (_markdown-insert-link_) command for inserting new link
+    markup or editing existing link markup
+  `C-c C-i` - (_markdown-insert-image_) command for inserting or editing image markup
+  `C-c C-x C-i` - _markdown-toggle-inline-images_ (Large images may
+       be scaled down to fit in the buffer using =markdown-max-image-size=)
+
+  # Markdown and Maintenance Commands #
+  `C-c C-c m` - **compile**, run Markdown on the current buffer and show the output in another buffer.
+  `C-c C-c p` - **preview**, run Markdown on the current buffer and previews, stores the output in a temporary file, and displays the file in a browser.
+  `C-c C-c e` - **export**, run Markdown on the current buffer and save the result in the file basename.html.
+  `C-c C-c v` - **export and view** file in browser.
+  `C-c C-c o` - **open** the Markdown source file directly using markdown-open-command.
+  `C-c C-c l` - **live export**, turn on `markdown-live-preview-mode` to view the exported output side-by-side with the source Markdown.
+
+  > markdown-live-preview-window-function can be customized to open in a browser other than eww.
+  > `customize markdown-split-window-direction` - force the preview window to appear at the bottom or right
+
+  `C-c C-c c` - check for undefined references
+  `C-c C-c c` - check for unused references
+  `C-c C-c n` - renumbers any ordered lists in the buffer that are out of sequence
+  `C-c C-c ]` - completes all headings and normalizes all horizontal rules in the buffer
+
+  # Lists #
+  `M-RET` - insert new list item (if there are none nearby - create new list)
+  > prefix command above with `C-u` to decrease folding level or `C-u C-u` to increase it
+
+  # Outline Navigation #
+  `C-c C-[n,p]` - move between the next and previous visible headings or list items of **any level**
+  `C-c C-[f,b]` - ... **at the same level as the one at the point**
+
+  # Tables #
+  |one|two|three|four|five|
+  |- <-- place cursor after first dash (there could also be `|:`) and press `TAB`
+
+  Then u can jump to next / prev. cell with `TAB / S-TAB`
+
+  > check table shortcuts [here](https://github.com/jrblevin/markdown-mode) (`C-f` --> table editing)
+
+  # Other commands #
+
+  `C-c C-o` - follow link below cursor
+  `M-p/n` - jump between links
+
+  `C-c C-d` - add todo checkmark? wut? it should do something, like reallign table below cursor
+  `C-c C-[-/=]` - promote demote heading / bold / italic text below cursor
+  `C-c C-[` - complete markup (mainly used on headers)
+
+  `C-c arrows` - move / indent list **item** | move / promote / demote **heading**
+
+
+  # Customization #
+  How to customize this package u will find [here](https://github.com/jrblevin/markdown-mode#customization)
+
+  # GitHub Flavored Markdown (GFM) #
+
+  [GitHub Flavored Markdown](https://github.com/jrblevin/markdown-mode#github-flavored-markdown-gfm)
+
+  The GitHub implementation differs slightly from standard Markdown in that
+  it supports things like different behavior for underscores inside of
+  words, automatic linking of URLs, strikethrough text, and fenced code
+  blocks with an optional language keyword.
+
+#+END_SRC

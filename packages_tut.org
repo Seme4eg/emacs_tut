@@ -31,8 +31,29 @@ submit
 *** to work only on files in cur. dir.
     ~* /~ - mark all directories --> ~t~ - toggle marks (will mark all files and unmark all dirs)
 
-** IDO
-// fill this section
+** IDO | [[https://masteringemacs.org/article/introduction-to-ido-mode][source]]
+*** General-purpose Commands
+- ~C-d~ :: open dired buffer in cur. dir.
+- ~C-t~ :: toggle matching by regexp
+- ~//~ :: ignore the preceding path
+- ~M-d~ :: searches for the input in all sub-dirs
+- ~C-k~ :: kills cur. focused buffer / deletes the file (depending on the mode)
+- ~M-m~ :: creates new sub-dir. to the dir. u r in
+
+#+BEGIN_QUOTE
+if ido is getting stuck on /switch-buffer/ or /find-file/ -
+~C-b[uffer]~ and ~C-f[ile]~ are switching to old completion engines
+#+END_QUOTE
+
+*** Work Dir. Commands
+Work directories are recently used directories that Ido caches so the
+files and directories in them can be quickly recalled. Work directory
+commands only function in ~find-file~ routines
+
+- ~M-n/p~ :: cycle through next / prev. work dirs.
+- ~M-k~ :: kill (remove) active work dir. from the list
+- ~M-s~ :: force ido to search the list of work dir-s for cur. input
+
 * Magit
 [[https://www.youtube.com/watch?v=zobx3T7hGNA][ref 0]] [[https://www.youtube.com/watch?v=vQO7F2Q9DwA][ref 1]]
 
@@ -219,3 +240,7 @@ Documentation is quite big, so better go read documentation on github
   blocks with an optional language keyword.
 
 #+END_SRC
+
+* Autocomplete | [[https://github.com/auto-complete/auto-complete/blob/master/doc/manual.md][github]]
+- ~M-n/p/{number}~ :: move to next / prev / {number} candidate in the list
+- ~C-s~ :: search among possible completions (i've enabled it in config)

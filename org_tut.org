@@ -30,8 +30,19 @@ press `tab` on heading - **collapse heading**
 #+END_CENTER
 
 ** Source code blocks
-#+BEGIN_SRC js
-  // `<s` --> `tab`
+After 'python' keyword on line below you can write the output of the
+code to a var and use it in next code-block
+#+NAME: pythonic-numbers
+#+BEGIN_SRC python :results list
+  import random
+  return [random.randrange(1, 20)
+	  for i in range( random.randrange(1, 20))]
+#+END_SRC
+after u execute this (~C-c C-c~) the output will appear below and
+'pythonic-numbers' will contain value
+
+#+BEGIN_SRC emacs-lisp :var numbers=pythonic-numbers
+  (length numbers)
 #+END_SRC
 
 ** Executing source code blocks

@@ -103,6 +103,8 @@ Default margin is 70 chars, but you can change it: `C-x f {number}`
 M-q -- re-fill the paragraph under cursor
 
 # Packages
+[here](https://github.com/emacs-tw/awesome-emacs) is big source of different pkgs
+
 `M-x package-list-packages` - open up the package manager buffer. While in it:
 - `h`elp -- see all possible commands (not many)
 - `Shift-u` - mark any packages available for upgrade --> `x` to install
@@ -113,18 +115,10 @@ M-x list-packages -- see all packages
 
 # Customization & Themes
 `M-x customize` - enter customization menu
-
-`M-x customize-group` - enter customization menu for specific group
-- `TAB` -- jump to the next option.
-
-> `M-x customize-group` --> then enter 'package'
-
-M-x menu-set-font -- change font if can
-
-`M-x load-theme RET` - check the available themes. Then put in .emacs:
-(load-theme 'misterioso t).
-
-M-x customize-themes
+`M-x customize-group [package_name]` - enter customization menu for specific group
+`M-x menu-set-font` - change font if can
+`M-x load-theme RET` - check the available themes
+`M-x` - customize-themes
 
 # Terminal
 if you already have emacs session running, but for some reason want to
@@ -138,19 +132,17 @@ terminal process ends
 **Terminal inside emacs**:
 
 `M-x term` - open terminal, but **don't** use this one
-
 `M-x ansi-term` - faster, better, supports starting cursor applications etc..
 
 > in 'char' mode ansi-term behaves like a terminal, in line mode it behaves like a buffer
 > which means you can copy, edit stuff etc..
 
+`M-x shell` - another way of opening terminal in emacs
+`M-x eshell` - open shell written in emacs lisp
+
 > in order to be able open multiple terminal in emacs:
 > 0) install extension for terminal multiplexing 'tmux'
 > 1) install pkg 'multi-term' and use `M-x multi-term`
-
-`M-x shell` - another way of opening terminal in emacs
-
-`M-x eshell` - open shell written in emacs lisp
 
 # Additional info
 `f3 (do things) f4` - record a macro (`f4` - call macro)
@@ -178,3 +170,5 @@ After changing **any** config file:
 - `load-file` (then 2 times RET) -- reload any file (most often .emacs) without restarting Emacs
 
 `list-command-history` - show all commands history
+
+`butterfly` - ......

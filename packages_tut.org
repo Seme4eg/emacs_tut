@@ -244,3 +244,6 @@ Documentation is quite big, so better go read documentation on github
 * Autocomplete | [[https://github.com/auto-complete/auto-complete/blob/master/doc/manual.md][github]]
 - ~M-n/p/{number}~ :: move to next / prev / {number} candidate in the list
 - ~C-s~ :: search among possible completions (i've enabled it in config)
+* Other small pkgs
+** Dashboard
+After opening emacs move to last recent opened file with ~TAB~

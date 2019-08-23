@@ -1,4 +1,22 @@
-# Basics
+# Introduction
+## Why emacs over vim?
+- async processing, terminal emulation. Emacs can also be decoupled server
+  and client, you can run Emacs as a daemon and it is not like vim's
+  client-server where one instance of vim acts like a client and the other acts
+  like a server. Emacs is 12Mb core with no extensions. The Emacs
+  client is 29K, it is a lightweight client, it just displays what the server
+  tells it to do
+
+- Emacs has different GUI implementation (VIM is a terminal implementation),
+  that means it can support different font sizes, graphics, line drawing, swg,
+  displaying pdfs
+
+- Emacs isn't right for everyone
+    + it got big footprint
+    + is memory intensive
+    > so if you are remoting often, Emacs is not the option, VIM is lightweight & fast
+
+## Basics
 First: [make CapsLock be ctrl](https://www.emacswiki.org/emacs/MovingTheCtrlKey)
 
 > i just did `setxkbmap -option ctrl:nocaps` (in terminal) # Make Caps Lock a Control key
@@ -50,15 +68,18 @@ C-h b -- **list all keybindings**
 `M-x occur` - find all lines in cur. file that match regexp
 `M-x multi-occur-in-matching-buffers` - find regexp in needed buffers
 
-## Tabs / Windows
+## Tabs
 There are no tabs in emacs initially, but there are windows configurations
 
 > it is possible to configure tabs in emacs, but they won't be as flexible as in vim, or that'll take lots of effort to achieve, which is not worth it, here is some info tho:
 > [tabbar package customisation](https://emacs.stackexchange.com/questions/10081/browser-style-tabs-for-emacs)
 > [tabbar emacswiki page](https://www.emacswiki.org/emacs/TabBarMode)
 
-**window configuration**:
+## Windows
+`C-x 0` - close window cursor is in
+`C-x 1` - close other windows
 
+### window configuration
 `C-x r w {register}` - save cur window and buffer position into register
 `C-x r j {register}` - reapply saved window config
 
@@ -145,7 +166,6 @@ terminal process ends
 > 1) install pkg 'multi-term' and use `M-x multi-term`
 
 # Additional info
-`f3 (do things) f4` - record a macro (`f4` - call macro)
 `C-h l` - shows all commands called before (including function names)
 
 `C-c C-o` - open link below cursor (in default browser)
@@ -172,3 +192,8 @@ After changing **any** config file:
 `list-command-history` - show all commands history
 
 `butterfly` - ......
+
+## Macro
+`f3 (do things) f4` - record a macro (`f4` - call macro)
+`M-x name-last-kbd-macro` - store last used macro for future sessions
+`M-x insert-keyboard-macro` - insert a macro by its name

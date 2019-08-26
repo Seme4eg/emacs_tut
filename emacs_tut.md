@@ -87,41 +87,31 @@ There are no tabs in emacs initially, but there are windows configurations
 (evil-leader/set-key "cr" 'jump-to-register)
 
 # Editing modes
-**To view documentation on your current major mode, type C-h m.**
+`C-h m` - **view documentation on your current modes**
 
-`M-x text mode <RET>` - M-f and M-b now treat apostrophes as part of
+	**Major modes** are called major because there are also minor modes.
+	**Minor modes** are minor modifications of major modes. Each minor
+	mode can be turned on or off by itself, independent of all other minor
+	modes, and independent of your major mode.
+
+	You can have a single major mode and multiple minor modes
+	**mmm-mode** - allows you have multiple major modes.
+
+	The biggest difference is that major modes in Emacs often change key
+	bindings radically.
+
+_Text Mode_ - M-f and M-b now treat apostrophes as part of
 words. In Fundamental mode, M-f and M-b treated apostrophes as
 word-separators.
 
----------
+_Auto Fill_ mode, Emacs breaks the line in between words automatically
+whenever you insert text and make a line that is too wide
 
-**Major modes** are called major because there are also minor modes.
-**Minor modes** are not alternatives to the major modes, just minor
-modifications of them.  Each minor mode can be turned on or off by
-itself, independent of all other minor modes, and independent of your
-major mode.  So you can use no minor modes, or one minor mode, or any
-combination of several minor modes.
-
-You can have a single major mode and multiple minor modes
-**mmm-mode** - allows you have multiple major modes.
-A major mode is similar to _set filetype_ from Vim, and a minor mode
-is similar to a plugin like _vim-surround_, which spans all
-filetypes.
-
-The biggest difference is that major modes in Emacs often change key
-bindings radically.
-
----------
-
-**Auto Fill** mode, Emacs breaks the line in between words automatically
-whenever you insert text and make a line that is too wide. (`M-x auto fill mode <RET>`)
-
-**Web Mode** - one of several mods, that support multiple modes at
+_Web Mode_ - one of several mods, that support multiple modes at
 the same time, **it supports templates**
 
-Default margin is 70 chars, but you can change it: `C-x f {number}`
-
-M-q -- re-fill the paragraph under cursor
+## Set file to open in a major mode (like set filetype in VIM)
+[link](http://ergoemacs.org/emacs/emacs_auto-activate_a_major-mode.html)
 
 # Packages
 [here](https://github.com/emacs-tw/awesome-emacs) is big source of different pkgs
@@ -171,6 +161,9 @@ terminal process ends
 `C-c C-o` - open link below cursor (in default browser)
 
 `TAB / Shift + TAB` in any `.md` file folds and unfolds headers
+
+Default margin is 70 chars, but you can change it: `C-x f {number}`
+M-q -- re-fill the paragraph under cursor
 
 ## Some useful commands (M-x)
 `revert-buffer` - “refresh” a opened file to its saved state

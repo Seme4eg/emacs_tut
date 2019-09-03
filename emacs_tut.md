@@ -165,7 +165,13 @@ terminal process ends
 Default margin is 70 chars, but you can change it: `C-x f {number}`
 M-q -- re-fill the paragraph under cursor
 
+`C-x C-f /sudo::/path/to/file/` - **Edit file with super-user rights:**
+
 ## Some useful commands (M-x)
+**Searching across opened buffers**:
+`multi-occur` - gives you fine control by prompting for each buffer to use
+`multi-occur-in-matching-buffers` - lets you enter a regexp to match file names
+
 `revert-buffer` - “refresh” a opened file to its saved state
 
 `visual-line-mode` - toggle long lines wrapping (like set wrap/nowrap in Vim)

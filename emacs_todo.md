@@ -22,3 +22,14 @@ how to use emacs for chatting in discord / telegramm / prob. whatsapp / vk???
 download custom css / js files for cases when u export .org file to browser
 
 `treemacs` (**21:19** in vid. above) or `ranger` (makes dired more like ranger (same kbd))
+
+get hand of how to use `GTAGS` lisp, link u can find below Aaron
+Beaver vid
+
+how to see snippets completion key in auto complete popup menu? and
+how to complete them not with M-/ but with tab
+
+bind `swiper-all` to some kbd
+and learn all swiper commands (jus type 'swiper' in M-x menu)
+
+how to make shell in emacs on bottom screen, small (minishell)

@@ -77,9 +77,12 @@ commands only function in ~find-file~ routines
 ** Working with Remote Repository
 - ~M a~ :: add remote rep
 - ~P p~ :: push
-- ~m m~ :: merge
-- ~F F~ :: fetch
+- ~f p~ :: fetch (without merging)
+- ~m m~ :: merge (after fetching remote for ex.)
+- ~F p~ :: pull (with merging)
 - ~e~ -- resolve conflicts --> ~n~ --> choose A/B --> save
+
+=CLONE is similer with CREATE REPO + ADD REMOTE + PULL=
 
 ** Commits (canceling / changing / squashing / splitting)
 *** Canceling commit message
@@ -91,13 +94,14 @@ commands only function in ~find-file~ routines
 ~l l~ --> cursor under wrong commit --> ~r w~ to reword a commit (then write new one)
 
 *** Squashing commits
-make 1 commit from /N/ last ones:
+make 1 commit from several last ones:
 
-- ~l l~
-- go to the oldest of /N/
 - ~r i[nteractively]~
-- read the cheat sheet there and do what you need
+- select a commit to be the starting point
 - ~C-c C-c~
+- ~S[quash]~
+
+=read the cheat sheet there and do what you need=
 
 Squash all unpushed commits:
 - instead of ~r i~ do ~r l~
@@ -241,6 +245,36 @@ Documentation is quite big, so better go read documentation on github
 
 #+END_SRC
 
+* Yasnippet
+~yas-describe-tables~ - run this to see all snippets
+all snippets are in =~/emacs.d/elpa/yasnippet-snippets-___.518/snippets/{modes}
+for performance reasons add yas-modes to different hooks
+for example to add hook 'lua-mode-hook' create dir. in '~/emacs.d/snippets/lua-mode/'
+
+~yas-new-snippet~ - create a snippet for the current major mode
+#+BEGIN_EXAMPLE
+  # -*- mode: snippet -*-
+  # name: My HTML Template
+  # key: htmldoc // <-- abbrev u type to expand a snippet
+  # -- // <-- this is a separator, write snippet below
+  <html>
+          <head>
+                  <title>$1</title> // <-- $1 means tab stop fields 1
+          </head>
+          <body>
+                  <h1>$1</h1> // <-- tab stop fields with same numbers share content
+                  <p>
+                          $2
+                  </p>
+                  $0 // <-- $0 means the last tab stop field
+          </body>
+  </html>
+
+  # once created, just save it to file (no extension)
+  # in the file path below u can see the major mode name for this snippet
+#+END_EXAMPLE
+
+~M-/~ - complete / expand abbreviation (Emacs)
 * Autocomplete | [[https://github.com/auto-complete/auto-complete/blob/master/doc/manual.md][github]]
 - ~M-n/p/{number}~ :: move to next / prev / {number} candidate in the list
 - ~C-s~ :: search among possible completions (i've enabled it in config)

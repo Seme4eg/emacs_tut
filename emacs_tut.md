@@ -181,6 +181,7 @@ M-q -- re-fill the paragraph under cursor
 `linum-mode` - show line numbers
 `menu-set-font` - set font if available
 `goto-char` - go to buffer position in file (**useful** when debugging emacs init files)
+`ediff-current-file` - start ediff between cur buffer and its file on disk
 
 After changing **any** config file:
 - `C-x C-e` - eval expression (place cursor at the end of this expression)

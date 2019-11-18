@@ -36,7 +36,7 @@ code to a var and use it in next code-block
 #+BEGIN_SRC python :results list
   import random
   return [random.randrange(1, 20)
-	  for i in range( random.randrange(1, 20))]
+          for i in range( random.randrange(1, 20))]
 #+END_SRC
 after u execute this (~C-c C-c~) the output will appear below and
 'pythonic-numbers' will contain value
@@ -60,25 +60,25 @@ your file. This part of org-mode is called babel
 : Hello sad! Today is Пт авг 16 15:00:47 MSK 2019
 
 * Lists
-*** bullet list
-    - bullet lists can be created like this (start a line with one or more space and a -
-    - pressing M-RET gives you a new bullet
-    - nested bullets:
-      - like this one (I pressed M-RET TAB to indent it)
-    - shift + tab to unindent it
-    - reorder list items with M-up or M-down just like with section headings
-    - you can change bullet style using S-left and S-right
+** bullet list
+ bullet lists can be created like this (start a line with one or more space and a -
+ pressing M-RET gives you a new bullet
+ nested bullets:
+ - like this one (I pressed M-RET TAB to indent it)
+ shift + tab to unindent it
+ reorder list items with M-up or M-down just like with section headings
+ you can change bullet style using S-left and S-right
 
-*** checklists [0/4]
-    - [ ] we can even have check lists
-    - [ ] M-S-RET gives a new item with a check box
-    - [ ] C-c C-c check/uncheck a box
-      - [ ] sub item
-    - [ ] track the number of items by adding '/' to the end of a line above a checklist - this updates when you check items off
+** checklists [0/4]
+ [ ] we can even have check lists
+ [ ] M-S-RET gives a new item with a check box
+ [ ] C-c C-c check/uncheck a box
+ - [ ] sub item
+ [ ] track the number of items by adding '/' to the end of a line above a checklist - this updates when you check items off
 
-*** definition lists
-    - definition lists :: these are useful sometime
-    - item 2 :: M-RET again gives another item
+** definition lists
+- definition lists :: these are useful sometime
+- item 2 :: M-RET again gives another item
 
 * Tables
 
@@ -94,14 +94,14 @@ your file. This part of org-mode is called babel
 
 `C-c |` - create an empty table / convert selected text to a table
 
- ID  x   y
- A   2   4
- B   3   9
+ID  x   y
+A   2   4
+B   3   9
 
 `M-x org-table-export` -- save tables to their own files (while cursor in the table)
 
 > For the format, type orgtbl-to and press TAB to see the available
-  options (e.g. orgtbl-to-csv will convert to csv in the output file)
+options (e.g. orgtbl-to-csv will convert to csv in the output file)
 
 ** Formulae
 use formulae to do arithmetic on tables, and use them like a spreadsheet.
@@ -151,7 +151,7 @@ default priority is A, ~Shift + arrows~ - change it
 ~, oa n~ - display list of scheduled tasks and unscheduled tasks below it
 
 - $ :: cross an item off your list. which marks it as done
-  and archives the item in a file called todo.org_archive
+     and archives the item in a file called todo.org_archive
 - ~Shift + up/down~ :: change priority or an item
 - ~E~ :: view notes to go with item
 - ~RET~ :: edit or view an item

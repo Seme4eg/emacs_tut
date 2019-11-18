@@ -55,7 +55,7 @@ commands only function in ~find-file~ routines
 - ~M-s~ :: force ido to search the list of work dir-s for cur. input
 
 * Magit
-[[https://www.youtube.com/watch?v=zobx3T7hGNA][ref 0]] [[https://www.youtube.com/watch?v=vQO7F2Q9DwA][ref 1]]
+[[https://www.youtube.com/watch?v=zobx3T7hGNA][ref 0]] [[https://www.youtube.com/watch?v=vQO7F2Q9DwA][rebasing and resolving conflicts]]
 
 - ~<leader>gi~ :: init rep (~magit-init~)
 - ~<leader>gs~ :: run magit interface (~magit-status~)
@@ -132,6 +132,12 @@ Squash all unpushed commits:
 ** Bisecting
 =[[https://www.lvguowei.me/post/magit-tutorial-bisect/][Bisecting]] - find the last commit that fucked up everything=
 
+** Resolving conflicts
+- hover on 'unmerged' files
+- ~e~ (or E, dunno) - start of standard ediff message
+- ~n~ (or N again..) - go to first commit difference
+- ~A or B~ to keep one 2 changes
+- ~n~ - save and add changed files
 
 ** Patch another branch's some files
 - ~D[iff]~ two branches

@@ -52,8 +52,20 @@ commands only function in ~find-file~ routines
 
 - ~M-n/p~ :: cycle through next / prev. work dirs.
 - ~M-k~ :: kill (remove) active work dir. from the list
-- ~M-s~ :: force ido to search the list of work dir-s for cur. input
+- ~M-s~ :: force ido to search the list of work dir-s for cur.
+* Treemacs
+** [[https://github.com/Alexander-Miller/treemacs#conveniently-editing-your-projects-and-workspaces][Conveniently Editing Your Projects and Workspaces]]
+*TL;DR*
+~C-c C-w e~ (treemacs-edit-workspaces) - edit your entire layout in the
+form of a single org-mode buffer
+~treemacs-finish-edit~ - after u done
+- [[https://github.com/Alexander-Miller/treemacs#git-mode][Git-mode]]
 
+** Shortcuts
+~S-TAB~ - collapse all projects
+
+** Workspaces Keybinds (Prefix ~C-c C-w~)
+[[https://github.com/Alexander-Miller/treemacs#workspaces-keybinds-prefix-c-c-c-w][link]]
 * Magit
 [[https://www.youtube.com/watch?v=zobx3T7hGNA][ref 0]] [[https://www.youtube.com/watch?v=vQO7F2Q9DwA][rebasing and resolving conflicts]]
 
@@ -147,16 +159,7 @@ Squash all unpushed commits:
 
 =same way works for new file created on dif. branch=
 
-* Helm | [[https://emacs-helm.github.io/helm/][github]]
-**Important**: In any helm session, as soon there is candidates in the
-helm buffer ~C-h m~ pops an org buffer with detailed documentation
-about current command and more generalized infos about helm.
-
-That's pretty much the only thing u need to know about _Helm_
-
-* Projectile & helm-projectile | [[https://github.com/bbatsov/projectile][github]]
-- helm-projectile :: helm integration for Projectile
-
+* Projectile | [[https://github.com/bbatsov/projectile][github]]
 ~<leader>pf~ (~projectile-find-file~) -- open file in project (project is considered to be a git rep)
 
 ** Ignoring files
@@ -168,20 +171,11 @@ Create .projectile file and put there rules like in gitignore, but with prefix '
 ** Learn how to:
 *make paragraph below a list using evil-mc!*
 
-jump to a file in project
-jump to a project buffer
 kill all project buffers
-replace in project
 multi-occur in project buffers
-grep in project
 regenerate project etags
-visit project in dired
 run make in a project with a single key chord
 
-* Use-package | [[https://github.com/jwiegley/use-package][github]]
-desided to use /use-package/ due to increase in load times (lazy loading) and more structurized package management
-
-Documentation is quite big, so better go read documentation on github
 * Markdown-mode | [[https://github.com/jrblevin/markdown-mode][github]]
 #+BEGIN_SRC markdown
   `C-c C-s` - commands for styling text (`C-h` - more)

@@ -258,16 +258,16 @@ for example to add hook 'lua-mode-hook' create dir. in '~/emacs.d/snippets/lua-m
   # key: htmldoc // <-- abbrev u type to expand a snippet
   # -- // <-- this is a separator, write snippet below
   <html>
-          <head>
-                  <title>$1</title> // <-- $1 means tab stop fields 1
-          </head>
-          <body>
-                  <h1>$1</h1> // <-- tab stop fields with same numbers share content
-                  <p>
-                          $2
-                  </p>
-                  $0 // <-- $0 means the last tab stop field
-          </body>
+    <head>
+      <title>$1</title> // <-- $1 means tab stop fields 1
+    </head>
+    <body>
+      <h1>$1</h1> // <-- tab stop fields with same numbers share content
+      <p>
+        $2
+      </p>
+      $0 // <-- $0 means the last tab stop field
+    </body>
   </html>
 
   # once created, just save it to file (no extension)

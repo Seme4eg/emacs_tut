@@ -60,7 +60,7 @@ your file. This part of org-mode is called babel
 : Hello sad! Today is Пт авг 16 15:00:47 MSK 2019
 
 * Lists
-*** bullet list
+** bullet list
 - bullet lists can be created like this (start a line with one or more space and a -
 - pressing M-RET gives you a new bullet
 - nested bullets:
@@ -69,14 +69,14 @@ your file. This part of org-mode is called babel
 - reorder list items with M-up or M-down just like with section headings
 - you can change bullet style using S-left and S-right
 
-*** checklists [0/4]
+** checklists [0/4]
 - [ ] we can even have check lists
 - [ ] M-S-RET gives a new item with a check box
 - [ ] C-c C-c check/uncheck a box
   - [ ] sub item
 - [ ] track the number of items by adding '/' to the end of a line above a checklist - this updates when you check items off
 
-*** definition lists
+** definition lists
 - definition lists :: these are useful sometime
 - item 2 :: M-RET again gives another item
 
